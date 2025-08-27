@@ -38,7 +38,31 @@ export default function App() {
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/products" element={<AdminProducts />} />
           <Route path="/admin/product/create" element={<ProductCreate />} />
-          <Route path="/admin/product/edit/:id" element={<ProductEdit />} />
+          <Route path="/admin/product
+/edit/:id" element={<ProductEdit />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+
+// 📂 src/App.jsx
+
+import Signup from "./pages/Auth/Signup"; // ✅ नया import
+
+function App() {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <main className="flex-1 container mx-auto p-4">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} /> {/* ✅ नया signup route */}
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/admin/products/edit" element={<ProductEdit />} />
         </Routes>
       </main>
       <Footer />
