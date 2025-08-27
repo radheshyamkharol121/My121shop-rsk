@@ -39,8 +39,8 @@ export default function ProductEdit() {
     <div className="max-w-xl mx-auto bg-white p-4 rounded">
       <h2 className="text-lg font-semibold mb-4">Edit Product</h2>
       <form onSubmit={onSubmit} className="space-y-3">
-        <input value={title} onChange={e=>setTitle(e.target.value)} placeholder="Title" className="w-full border p-2 rounded" />
-        <input value={price} onChange={e=>setPrice(e.target.value)} placeholder="Price" type="number" className="w-full border p-2 rounded" />
+        <input value={title} onChange={e=>setTitle(e.target.value)} placeholder="Title" className="w-full border p-2 rounded" required />
+        <input value={price} onChange={e=>setPrice(e.target.value)} placeholder="Price" type="number" className="w-full border p-2 rounded" required />
         <textarea value={desc} onChange={e=>setDesc(e.target.value)} placeholder="Description" className="w-full border p-2 rounded" />
         <input type="file" accept="image/*" onChange={e=>setFile(e.target.files[0])} />
         <div className="flex gap-2">
