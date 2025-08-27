@@ -1,13 +1,10 @@
 // src/services/products.js
-// हिंदी: Products CRUD helpers (Firestore)
-
 import { db } from './firebase';
 import { collection, addDoc, doc, getDoc, getDocs, updateDoc, deleteDoc, query, orderBy, limit } from 'firebase/firestore';
 
 const productsCol = collection(db, 'products');
 
 export async function createProduct(data) {
-  // data: { title, price, description, thumbnail, image }
   const docRef = await addDoc(productsCol, { ...data, createdAt: new Date() });
   return docRef.id;
 }
