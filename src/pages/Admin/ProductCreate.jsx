@@ -4,6 +4,7 @@ import { uploadFile } from '../../services/storage';
 import { createProduct } from '../../services/products';
 import { useNavigate } from 'react-router-dom';
 
+// हिंदी: Admin page से product add करने के लिए यह form use करें
 export default function ProductCreate() {
   const [title, setTitle] = useState('');
   const [price, setPrice] = useState('');
@@ -24,16 +25,19 @@ export default function ProductCreate() {
       const id = await createProduct({ title, price: Number(price), description: desc, thumbnail: thumbUrl });
       alert('Product created: ' + id);
       nav('/admin/products');
-    } catch (err) { alert('Error: ' + err.message); }
-    finally { setLoading(false); }
+    } catch (err) {
+      alert('Error: ' + err.message);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
     <div className="max-w-xl mx-auto bg-white p-4 rounded">
-      <h2 className="text-lg font-semibold mb-4">Add Product</h2>
+      <h2 className="text-lg font-semibold mb-4">नया Product जोड़ें</h2>
       <form onSubmit={onSubmit} className="space-y-3">
-        <input value={title} onChange={e=>setTitle(e.target.value)} placeholder="Title" className="w-full border p-2 rounded" />
-        <input value={price} onChange={e=>setPrice(e.target.value)} placeholder="Price" type="number" className="w-full border p-2 rounded" />
+        <input value={title} onChange={e=>setTitle(e.target.value)} placeholder="Title" className="w-full border p-2 rounded" required />
+        <input value={price} onChange={e=>setPrice(e.target.value)} placeholder="Price" type="number" className="w-full border p-2 rounded" required />
         <textarea value={desc} onChange={e=>setDesc(e.target.value)} placeholder="Description" className="w-full border p-2 rounded" />
         <input type="file" accept="image/*" onChange={e=>setFile(e.target.files[0])} />
         <div className="flex gap-2">
