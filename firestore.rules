@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // products - public readable, admin writable
+    match /products/{docId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null && request.auth.token.admin == true;
+    }
+
+    // orders - users can create, read own orders, admins can read all
+    match /orders/{ord} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null && (request.auth.uid == resource.data.userId || request.auth.token.admin == true);
+      allow update, delete: if request.auth != null && request.auth.token.admin == true;
+    }
+
+    match /{document=**} { allow read, write: if false; }
+  }
+}
