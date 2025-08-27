@@ -1,0 +1,19 @@
+# Node
+node_modules/
+dist/
+build/
+
+# env / secrets
+.env
+.env.*.local
+.env.local
+serviceAccountKey.json
+
+# Firebase
+.firebase/
+
+# editor / OS
+.DS_Store
+.vscode/
+.idea/
+*.log
