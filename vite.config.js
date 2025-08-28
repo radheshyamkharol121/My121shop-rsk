@@ -1,7 +1,7 @@
 // vite.config.js
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import path from 'path';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
@@ -11,8 +11,11 @@ export default defineConfig({
     },
   },
   server: {
-    host: '0.0.0.0',  // बाहरी access के लिए enable करें
+    host: '0.0.0.0',  // बाहरी access के लिए
     port: 5000,       // Replit के लिए recommended port
-    open: true        // Browser अपने आप खुल जाएगा
+    open: true,
+    allowedHosts: [
+      '4cbf995a-240c-4453-863d-5ec88094944d-00-3r2q67gdq48pv.sisko.replit.dev' // Add your host here
+    ]
   },
 });
