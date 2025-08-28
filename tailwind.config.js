@@ -3,6 +3,18 @@
 // 🎨 Tailwind CSS का config file
 // 👉 यहाँ पर हम specify करते हैं कि किन files में Tailwind classes use होंगी
 // ------------------------------------------
+import { defineConfig } from 'tailwindcss'
+
+export default defineConfig({
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+})
 
 /** @type {import('tailwindcss').Config} */
 export default {
