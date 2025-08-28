@@ -15,7 +15,7 @@ export default defineConfig({
     port: 5000,       // Replit के लिए recommended port
     open: true,
     allowedHosts: [
-      '4cbf995a-240c-4453-863d-5ec88094944d-00-3r2q67gdq48pv.sisko.replit.dev' // Add your host here
+      '4cbf995a-240c-4453-863d-5ec88094944d.sisko.replit.dev' // Add your host here
     ]
   },
 });
