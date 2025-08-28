@@ -4,9 +4,9 @@
   "description": "Professional E-commerce project with React + Firebase + TailwindCSS",
   "main": "src/main.jsx",
   "scripts": {
-    "dev": "vite",             // 👉 Development server चलाने के लिए
-    "build": "vite build",     // 👉 Production build के लिए
-    "preview": "vite preview", // 👉 Build test करने के लिए
+    "dev": "vite",             
+    "build": "vite build",     
+    "preview": "vite preview", 
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
